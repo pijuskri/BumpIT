@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour {
     Rigidbody rigid;
     float speed = 1000;
     float maxSpeed = 10;
-    float rotationSpeed = 50f;
+    float rotationSpeed = 70f;
 	// Use this for initialization
 	void Start () {
         rigid = GetComponent<Rigidbody>();
