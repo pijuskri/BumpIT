@@ -73,7 +73,7 @@ public class Movement : MonoBehaviour {
         //transform.rotation = Quaternion.Euler(0,transform.rotation.eulerAngles.y, 0);
         //if (rigid.velocity.magnitude > maxSpeed) rigid.velocity = new Vector3(rigid.velocity.);
     }
-    private void OnCollisionEnter(Collision coll)
+    private void OnCollisionStay(Collision coll)
     {
         if (coll.gameObject.tag == "ground")
         {
@@ -81,4 +81,5 @@ public class Movement : MonoBehaviour {
         }
         else onGround = false;
     }
+    
 }
