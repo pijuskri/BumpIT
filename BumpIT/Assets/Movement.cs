@@ -53,11 +53,11 @@ public class Movement : MonoBehaviour {
             GetComponent<Rigidbody>().angularVelocity = new Vector3();
         }
 
-        if (Input.GetKey((KeyCode)(int)Foward))
+        if (Input.GetKey((KeyCode)(int)Foward) && onGround)
         {
             rigid.AddForce(transform.forward * speed * Time.deltaTime);
         }
-        if (Input.GetKey((KeyCode)(int)Back))
+        if (Input.GetKey((KeyCode)(int)Back) && onGround)
         {
             rigid.AddForce(-transform.forward * speed * Time.deltaTime);
         }
