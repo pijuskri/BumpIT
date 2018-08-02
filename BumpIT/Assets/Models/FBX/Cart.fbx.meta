@@ -1,37 +1,34 @@
 fileFormatVersion: 2
-guid: 21dd725417dc5774694ebccbdf5dcdd5
+guid: f3a3391765c7b6f4480a7f59f4bc7e59
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     100002: Cube
-    100004: Cube_001
-    100006: Cube_002
-    100008: Cube_003
+    100004: Cube.001
+    100006: Cube.002
+    100008: Cube.003
     400000: //RootNode
     400002: Cube
-    400004: Cube_001
-    400006: Cube_002
-    400008: Cube_003
-    2100000: unnamed
+    400004: Cube.001
+    400006: Cube.002
+    400008: Cube.003
+    2100000: No Name
     2100002: Skirt
     2100004: cart
     2100006: Stripe
     2300000: Cube
-    2300002: Cube_001
-    2300004: Cube_002
-    2300006: Cube_003
+    2300002: Cube.001
+    2300004: Cube.002
+    2300006: Cube.003
     3300000: Cube
-    3300002: Cube_001
-    3300004: Cube_002
-    3300006: Cube_003
-    4300000: Cube_003
-    4300002: Cube_002
-    4300004: Cube_001
+    3300002: Cube.001
+    3300004: Cube.002
+    3300006: Cube.003
+    4300000: Cube.003
+    4300002: Cube.002
+    4300004: Cube.001
     4300006: Cube
-    7400000: Default Take
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -84,7 +81,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -109,7 +106,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
