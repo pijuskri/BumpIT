@@ -181,7 +181,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f3a3391765c7b6f4480a7f59f4bc7e59, type: 3}
+  - {fileID: 2100000, guid: 980fe482998dd7644bef1bd132fca9d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -287,7 +287,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f3a3391765c7b6f4480a7f59f4bc7e59, type: 3}
+  - {fileID: 2100000, guid: d12aebbbb329a8441ac42299af88946d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -344,12 +344,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 2
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!64 &64044675352568606
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -380,3 +380,4 @@ MonoBehaviour:
   Left: 97
   Right: 100
   center: {fileID: 0}
+  player: 0
