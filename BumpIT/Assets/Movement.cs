@@ -5,29 +5,46 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
     Rigidbody rigid;
+
     float speed = 1000;
     float maxSpeed = 10;
-    float rotationSpeed = 70f;
-	// Use this for initialization
-	void Start () {
+    float rotationSpeed = 120f;
+
+    public char Foward;
+    public char Back;
+    public char Left;
+    public char Right;
+
+    public Transform center;
+
+    // Use this for initialization
+    void Start () {
         rigid = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.W))
+        if (Vector3.Distance(transform.position, center.transform.position) > 35)
+        {
+            transform.position = new Vector3(0, 5, 0);
+            GetComponent<Rigidbody>().velocity = new Vector3();
+            transform.rotation = new Quaternion();
+            GetComponent<Rigidbody>().angularVelocity = new Vector3();
+        }
+
+        if (Input.GetKey((KeyCode)(int)Foward))
         {
             rigid.AddForce(transform.forward * speed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey((KeyCode)(int)Back))
         {
             rigid.AddForce(-transform.forward * speed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey((KeyCode)(int)Left))
         {
             transform.Rotate(new Vector3(0,-1,0) * rotationSpeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey((KeyCode)(int)Right))
         {
             transform.Rotate(new Vector3(0, 1, 0) * rotationSpeed * Time.deltaTime);
         }
