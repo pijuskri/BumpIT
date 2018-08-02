@@ -27,7 +27,7 @@ public class CameraLogic : MonoBehaviour {
             float distance = Vector2.Distance(middle, new Vector2(car.position.x, car.position.z));
             if (distance > max) max = distance;
         }
-        height = max/1.5f + 10;
+        height = max + 5;
         transform.position = new Vector3(middle.x, height, middle.y);
 	}
 }

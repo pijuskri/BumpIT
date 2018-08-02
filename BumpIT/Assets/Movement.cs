@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour {
 
     Rigidbody rigid;
 
-    float speed = 1000;
+    float speed = 600;
     float maxSpeed = 10;
     float rotationSpeed = 120f;
 
@@ -17,16 +17,37 @@ public class Movement : MonoBehaviour {
 
     public Transform center;
 
+    bool onGround = false;
+
+    public int player;
+
     // Use this for initialization
     void Start () {
         rigid = GetComponent<Rigidbody>();
+        Color setColor = new Color();
+        switch (player)
+        {
+            case 0:
+                setColor = Color.blue;
+                break;
+            case 1:
+                setColor = Color.red;
+                break;
+            case 2:
+                setColor = Color.yellow;
+                break;
+            default:
+                setColor = Color.white;
+                break;
+        }
+        GetComponentInChildren<MeshRenderer>().material.color = setColor;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Vector3.Distance(transform.position, center.transform.position) > 35)
+        if (Vector3.Distance(transform.position, center.transform.position) > 30)
         {
-            transform.position = new Vector3(0, 5, 0);
+            transform.position = new Vector3(Random.Range(-5, 5), 3, Random.Range(-5, 5));
             GetComponent<Rigidbody>().velocity = new Vector3();
             transform.rotation = new Quaternion();
             GetComponent<Rigidbody>().angularVelocity = new Vector3();
@@ -51,5 +72,13 @@ public class Movement : MonoBehaviour {
 
         //transform.rotation = Quaternion.Euler(0,transform.rotation.eulerAngles.y, 0);
         //if (rigid.velocity.magnitude > maxSpeed) rigid.velocity = new Vector3(rigid.velocity.);
+    }
+    private void OnCollisionEnter(Collision coll)
+    {
+        if (coll.gameObject.tag == "ground")
+        {
+            onGround = true;
+        }
+        else onGround = false;
     }
 }
