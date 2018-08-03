@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour {
 
@@ -15,6 +16,9 @@ public class GameLogic : MonoBehaviour {
     public GameObject AICar;
     public CameraLogic cameraLogic;
     public Text[] scoreDisplay;
+    public GameObject box;
+
+    bool boxesSpawned = false;
     // Use this for initialization
     void Start () {
         scoreList = new int[4];
@@ -32,7 +36,10 @@ public class GameLogic : MonoBehaviour {
         }
         //cars[0].SetActive(false);
 
+        
         cameraLogic.carList = cars;
+
+        
     }
 	
 	// Update is called once per frame
@@ -41,5 +48,15 @@ public class GameLogic : MonoBehaviour {
         {
             scoreDisplay[i].text = scoreList[i].ToString();
         }
-	}
+        if (SceneManager.GetSceneByName("menu").isLoaded == false && !boxesSpawned)
+        {
+            for (int i = 0; i < 15; i++)
+            {
+                Vector2 temp = Random.insideUnitCircle * 18;
+                Instantiate(box, new Vector3(temp.x, 7, temp.y),
+                    Quaternion.Euler(0, Random.Range(0, 360), 0));
+            }
+            boxesSpawned = true;
+        }
+    }
 }

@@ -9,7 +9,6 @@ public class Menu : MonoBehaviour {
     int playerCount;
     public Text playerCountText;
     public Slider slider;
-    bool go = false;
     //public Text playerCountDisplay
 	// Use this for initialization
 	void Start () {
@@ -23,30 +22,34 @@ public class Menu : MonoBehaviour {
 
         if (SceneManager.GetSceneByName("game").isLoaded)
         {
+            GameLogic gameLogic = GameObject.FindGameObjectWithTag("GameLogic").GetComponent<GameLogic>();
+            gameLogic.playerCount = playerCount;
+
+            List<GameObject> cars = new List<GameObject>();
+            cars.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+            Debug.Log(cars.Count);
+            if (playerCount == 3)
+            {
+                cars[3].SetActive(false);
+                gameLogic.scoreDisplay[3].gameObject.SetActive(false);
+            }
+            if (playerCount == 2)
+            {
+                cars[3].SetActive(false);
+                cars[2].SetActive(false);
+                gameLogic.scoreDisplay[3].gameObject.SetActive(false);
+                gameLogic.scoreDisplay[2].gameObject.SetActive(false);
+            }
+
+
             
+            
+            SceneManager.UnloadSceneAsync("menu");
         } 
     }
     public void GoToNextScene()
     {
         SceneManager.LoadScene("game", LoadSceneMode.Additive);
-        go = true;
-
-        List<GameObject> cars = new List<GameObject>();
-        cars.AddRange(GameObject.FindGameObjectsWithTag("Player"));
-        Debug.Log(cars.Count);
-        if (playerCount == 3)
-        {
-            cars[3].SetActive(false);
-        }
-        if (playerCount == 2)
-        {
-            cars[3].SetActive(false);
-            cars[2].SetActive(false);
-        }
-
-
-        GameObject.FindGameObjectWithTag("GameLogic").GetComponent<GameLogic>().playerCount = playerCount;
-        SceneManager.UnloadSceneAsync("menu");
     }
     
 }
