@@ -45,13 +45,10 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Vector3.Distance(transform.position, center.transform.position) > 30)
-        {
-            transform.position = new Vector3(Random.Range(-5, 5), 3, Random.Range(-5, 5));
-            GetComponent<Rigidbody>().velocity = new Vector3();
-            transform.rotation = new Quaternion();
-            GetComponent<Rigidbody>().angularVelocity = new Vector3();
-        }
+        if (transform.rotation.eulerAngles.z > 160 && 
+            transform.rotation.eulerAngles.z < 200 && onGround) Respawn();
+
+        if (Vector3.Distance(transform.position, center.transform.position) > 30) Respawn();   
 
         if (Input.GetKey((KeyCode)(int)Foward) && onGround)
         {
@@ -80,6 +77,14 @@ public class Movement : MonoBehaviour {
             onGround = true;
         }
         else onGround = false;
+    }
+    void Respawn()
+    {
+        transform.position = new Vector3(Random.Range(-5, 5), 3, Random.Range(-5, 5));
+        GetComponent<Rigidbody>().velocity = new Vector3();
+        transform.rotation = new Quaternion();
+        GetComponent<Rigidbody>().angularVelocity = new Vector3();
+        onGround = false;
     }
     
 }
