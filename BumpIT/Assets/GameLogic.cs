@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour {
 
-    int playerCount = 2;
+    public int playerCount = 4;
 
     public int[] scoreList;
     public int[] deaths;
@@ -13,10 +14,11 @@ public class GameLogic : MonoBehaviour {
 
     public GameObject AICar;
     public CameraLogic cameraLogic;
+    public Text[] scoreDisplay;
     // Use this for initialization
     void Start () {
         scoreList = new int[4];
-        deaths = new int[5];
+        deaths = new int[4];
 
         cars = new List<GameObject>();
         cars.AddRange(GameObject.FindGameObjectsWithTag("Player"));
@@ -28,13 +30,16 @@ public class GameLogic : MonoBehaviour {
             GameObject temp = Instantiate(AICar, new Vector3(cord.x, 7, cord.y), new Quaternion());
             cars.Add(temp);
         }
-        
+        //cars[0].SetActive(false);
 
         cameraLogic.carList = cars;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        for (int i = 0; i < playerCount; i++)
+        {
+            scoreDisplay[i].text = scoreList[i].ToString();
+        }
 	}
 }

@@ -9,7 +9,7 @@ public class CameraLogic : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //List<Transform> carList = new List<Transform>();
-
+        transform.rotation = Quaternion.Euler(65,0,0);
     }
 	
 	// Update is called once per frame
@@ -32,6 +32,6 @@ public class CameraLogic : MonoBehaviour {
             if (distance > max) max = distance;
         }
         height = max*1.5f + 3;
-        transform.position = new Vector3(middle.x, height, middle.y-height/2);
+        transform.position = new Vector3(middle.x, height, middle.y-height/2-1);
 	}
 }

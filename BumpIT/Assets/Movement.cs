@@ -97,9 +97,9 @@ public class Movement : MonoBehaviour {
         gameLogic.deaths[player]++;
        
 
-        transform.position = new Vector3(Random.Range(-5, 5), 3, Random.Range(-5, 5));
+        transform.position = new Vector3(Random.Range(-7, 7), 3, Random.Range(-7, 7));
         GetComponent<Rigidbody>().velocity = new Vector3();
-        transform.rotation = new Quaternion();
+        transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
         GetComponent<Rigidbody>().angularVelocity = new Vector3();
         onGround = false;
     }
