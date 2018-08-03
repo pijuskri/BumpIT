@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 114509446928681602}
   m_Layer: 0
   m_Name: Cart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -375,9 +375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdb56903afb0304298e7cd4425e865d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Foward: 119
-  Back: 115
-  Left: 97
-  Right: 100
+  gameLogic: {fileID: 0}
   center: {fileID: 0}
   player: 0
