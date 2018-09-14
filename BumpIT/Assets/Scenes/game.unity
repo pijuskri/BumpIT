@@ -236,6 +236,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd00dfe886e27ee4ebfe34c41a9d3f41, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &105938175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1376492349665394, guid: cd00dfe886e27ee4ebfe34c41a9d3f41,
+    type: 2}
+  m_PrefabInternal: {fileID: 105938174}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +350,11 @@ MonoBehaviour:
   playerCount: 4
   scoreList: 000000000000000000000000
   deaths: 000000000000000000000000
-  cars: []
+  cars:
+  - {fileID: 1442309792}
+  - {fileID: 105938175}
+  - {fileID: 787380849}
+  - {fileID: 535651970}
   AICar: {fileID: 0}
   cameraLogic: {fileID: 534669906}
   scoreDisplay:
@@ -510,6 +519,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd00dfe886e27ee4ebfe34c41a9d3f41, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &535651970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1376492349665394, guid: cd00dfe886e27ee4ebfe34c41a9d3f41,
+    type: 2}
+  m_PrefabInternal: {fileID: 535651969}
 --- !u!1001 &787380848
 Prefab:
   m_ObjectHideFlags: 0
@@ -571,6 +585,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd00dfe886e27ee4ebfe34c41a9d3f41, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &787380849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1376492349665394, guid: cd00dfe886e27ee4ebfe34c41a9d3f41,
+    type: 2}
+  m_PrefabInternal: {fileID: 787380848}
 --- !u!1 &823248409
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -881,6 +900,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd00dfe886e27ee4ebfe34c41a9d3f41, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1442309792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1376492349665394, guid: cd00dfe886e27ee4ebfe34c41a9d3f41,
+    type: 2}
+  m_PrefabInternal: {fileID: 1442309791}
 --- !u!1 &1664639236
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.2758026, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1220,7 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.13679248, b: 0.7265, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1337,7 +1361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.913885, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

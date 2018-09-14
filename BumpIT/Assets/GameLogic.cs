@@ -24,9 +24,9 @@ public class GameLogic : MonoBehaviour {
         scoreList = new int[4];
         deaths = new int[4];
 
-        cars = new List<GameObject>();
-        cars.AddRange(GameObject.FindGameObjectsWithTag("Player"));
-        cars.TrimExcess();
+        //cars = new List<GameObject>();
+        //cars.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+        //cars.TrimExcess();
 
         for (int i = 0; i < 0; i++)
         {
@@ -50,6 +50,7 @@ public class GameLogic : MonoBehaviour {
         }
         if (SceneManager.GetSceneByName("menu").isLoaded == false && !boxesSpawned)
         {
+            cameraLogic.carList = cars;
             for (int i = 0; i < 15; i++)
             {
                 Vector2 temp = Random.insideUnitCircle * 18;

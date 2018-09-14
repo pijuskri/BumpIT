@@ -25,13 +25,13 @@ public class Menu : MonoBehaviour {
             GameLogic gameLogic = GameObject.FindGameObjectWithTag("GameLogic").GetComponent<GameLogic>();
             gameLogic.playerCount = playerCount;
 
-            List<GameObject> cars = new List<GameObject>();
-            cars.AddRange(GameObject.FindGameObjectsWithTag("Player"));
-            Debug.Log(cars.Count);
+            List<GameObject> cars = gameLogic.cars;
             if (playerCount == 3)
             {
                 cars[3].SetActive(false);
                 gameLogic.scoreDisplay[3].gameObject.SetActive(false);
+                cars.RemoveAt(3);
+                
             }
             if (playerCount == 2)
             {
@@ -39,11 +39,13 @@ public class Menu : MonoBehaviour {
                 cars[2].SetActive(false);
                 gameLogic.scoreDisplay[3].gameObject.SetActive(false);
                 gameLogic.scoreDisplay[2].gameObject.SetActive(false);
+                cars.RemoveAt(3);
+                cars.RemoveAt(2);
             }
+            cars.TrimExcess();
 
 
-            
-            
+
             SceneManager.UnloadSceneAsync("menu");
         } 
     }
@@ -51,5 +53,5 @@ public class Menu : MonoBehaviour {
     {
         SceneManager.LoadScene("game", LoadSceneMode.Additive);
     }
-    
+   
 }
