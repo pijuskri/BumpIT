@@ -92,7 +92,7 @@ public class Movement : MonoBehaviour {
             //Debug.Log(player);
             gameLogic.scoreList[lastHit.GetComponent<Movement>().player]++;
         }
-        else if (gameLogic.scoreList[player] > 0) gameLogic.scoreList[player]--;
+        //else if (gameLogic.scoreList[player] > 0) gameLogic.scoreList[player]--;
 
         gameLogic.deaths[player]++;
        
